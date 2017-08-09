@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html ng-app="currencyConverter">
+  <head>
+    <meta charset="utf-8">
+    <title>Currency Converter Application</title>
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- font awesome -->
+    <link rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!-- custom Css -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <style media="screen">
+    </style>
+  </head>
+  <body ng-controller="displayRates" ng-cloak="">
+
+    <div class="container">
+
+      <!-- Heading
+      ==================================== -->
+      <div class="row">
+        <br>
+        <div class="jumbotron">
+          <h1>
+            <i class="fa fa-money" aria-hidden="true"></i>
+            <i class="fa fa-hand-lizard-o" aria-hidden="true"></i>
+            Currency Converter Application
+          </h1>
+        </div><!-- /.jumbotron -->
+      </div><!-- /.row -->
+
+      <!-- Four displays
+      ==================================== -->
+      <div class="row">
+
+        <!-- Dollar -->
+        <div class="col-md-3">
+          <h1><i class="fa fa-usd" aria-hidden="true"></i></h1>
+          <h3>USD</h3>
+          <div class="form-group">
+            <input type="text" class="form-control" ng-model="::finalValues['USD'].toFixed(2)">
+          </div><!-- /.form-group -->
+        </div><!-- /.col -->
+
+        <!-- Euro -->
+        <div class="col-md-3">
+          <h1><i class="fa fa-eur" aria-hidden="true"></i></h1>
+          <h3>EURO</h3>
+          <div class="form-group">
+            <input type="text" class="form-control" ng-model="::finalValues['EUR'].toFixed(2)">
+          </div><!-- /.form-group -->
+        </div><!-- /.col -->
+
+        <!-- Great British Pound -->
+        <div class="col-md-3">
+          <h1><i class="fa fa-gbp" aria-hidden="true"></i></h1>
+          <h3>GBP</h3>
+          <div class="form-group">
+            <input type="text" class="form-control" ng-model="::finalValues['GBP'].toFixed(2)">
+          </div><!-- /.form-group -->
+        </div><!-- /.col -->
+
+        <!-- Indian Rupee -->
+        <div class="col-md-3">
+          <h1><i class="fa fa-inr" aria-hidden="true"></i></h1>
+          <h3>INR</h3>
+          <div class="form-group">
+            <input type="text" class="form-control" ng-model="::finalValues['INR'].toFixed(2)">
+          </div><!-- /.form-group -->
+        </div><!-- /.col -->
+
+      </div><!-- /.row -->
+
+      <!-- Heading
+      ==================================== -->
+      <div class="row">
+        <div class="black jumbotron">
+
+          <p class="lite-font text-center">Convert from</p>
+
+          <div class="col-md-2 col-md-offset-4">
+            <div class="form-group">
+             <select class="form-control" ng-model="currencyType"
+               ng-init="currencyType = acceptedCurrencies[0]"
+               ng-options="c for c in acceptedCurrencies"
+               ng-change="calculate(currencyType, userValue)">
+             </select>
+           </div>
+         </div>
+
+          <!-- User enters value here -->
+          <div class="col-md-2">
+            <div class="form-group">
+              <input type="text" class="form-control" ng-model="userValue"
+                ng-change="calculate(currencyType, userValue)">
+            </div><!-- form-group -->
+          </div><!-- /.col -->
+
+        </div><!-- /.jumbotron -->
+      </div><!-- /.row -->
+
+    </div><!-- /.container -->
+
+
+    <!-- jquery -->
+    <script type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+    <!-- bootstrap js -->
+    <script type="text/javascript"
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+    </script>
+    <!-- angular js -->
+    <script type="text/javascript" src="/js/angular.min.js"></script>
+    <!-- Custom script -->
+    <script type="text/javascript" src="/js/script.js"></script>
+    <!-- Extra javascript -->
+    <script type="text/javascript">
+    </script>
+  </body>
+</html>
