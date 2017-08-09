@@ -1,9 +1,9 @@
 var superagent = require('superagent');
 var _ = require('underscore');
 
-module.exports = function(Config, cb) {
+module.exports = function(key, cb) {
   var url = 'http://openexchangerates.org/api/latest.json?app_id=' +
-    Config.openExchangeRatesKey;
+    key;
 
   // default rates incase get fails.
   var unitRates = {

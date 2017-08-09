@@ -9,11 +9,9 @@
   "author": "Rj",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.17.2",
-    "express": "^4.15.3",
-    "hammerjs": "^2.0.8",
-    "request": "^2.81.0",
-    "wagner": "^0.6.4",
-    "wagner-core": "^0.2.0"
+    "body-parser": "*",
+    "express": "*",
+    "superagent": "*",
+    "underscore": "*"
   }
 }
