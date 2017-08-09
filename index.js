@@ -29,5 +29,5 @@ app.get('/',function (req, res) {
   res.sendFile(filepath);
 });
 
-app.listen(IP, PORT);
+app.listen(PORT, IP);
 console.log('Listening on port ' + PORT + "!");
