@@ -4,6 +4,9 @@ const path        = require('path');
 const fx          = require("./fx");
 const app         = express();
 
+const PORT        = process.env.PORT || 3000;
+const IP          = process.env.IP   || "0.0.0.0";
+
 // serve static files.
 app.use(express.static('./public', { maxAge: 4 * 60 * 60 * 1000 /* 2hrs */ }));
 app.use(bodyParser.urlencoded({ extended : true }));
@@ -26,5 +29,5 @@ app.get('/',function (req, res) {
   res.sendFile(filepath);
 });
 
-app.listen(3000);
-console.log('Listening on port 3000!');
+app.listen(IP, PORT);
+console.log('Listening on port ' + PORT + "!");
